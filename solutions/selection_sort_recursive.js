@@ -3,12 +3,12 @@ function selectionSortRecursive(arr) {
     return [];
   }
 
-  const min = Math.min(...arr);
+  const min = Math.max(...arr);
   const idx = arr.indexOf(min);
   arr.splice(idx, 1);
 
   const result = selectionSortRecursive(arr);
-  result.unshift(min);
+  result.push(min);
   return result;
 }
 
